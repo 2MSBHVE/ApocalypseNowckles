@@ -206,7 +206,7 @@ public class CaveExplorer {
 
 		}
 		
-		caves[1][1] = new EventRoom("", true, new MaxEndGame());
+		caves[1][1] = new EventRoom("", true, new TraceyEndGame());
 		currentRoom = caves[1][1];
 		currentRoom.enter();
 		

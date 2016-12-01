@@ -6,7 +6,7 @@ import javax.sound.midi.MidiUnavailableException;
 import caveExplorer.*;
 import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class MaxEndGame implements Playable {
+public class TraceyEndGame implements Playable {
 
 	public static boolean eventOccurred = false; 
 	
@@ -16,7 +16,7 @@ public class MaxEndGame implements Playable {
 			"You escape the mineshaft.",
 			};
 	
-	public MaxEndGame() {
+	public TraceyEndGame() {
 		
 	}
 	
