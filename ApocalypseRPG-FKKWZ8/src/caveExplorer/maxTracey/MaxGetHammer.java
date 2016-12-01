@@ -5,31 +5,29 @@ import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.CaveExplorer;
 import caveExplorer.Playable;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class GetNails implements Playable {
+public class MaxGetHammer implements Playable {
 
 	public static boolean eventOccurred = false; 
 	
 	private static final String[] SEQUENCE_1 = {
-			"A shimmer of light comes from a small metal box across the room.",
-			"The box is labeled \"NAILS.\"",
-			"You open the box to find it is indeed full of nails.",
-			" - - - - press enter to pick up the nails - - - - "
+			"You spot a hammer hanging on the wall.",
+			" - - - - press enter to pick up the hammer - - - - "
 			};
 	
-	public GetNails() {
+	public MaxGetHammer() {
 		
 	}
 	
 	public void play() throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
 		eventOccurred = true;
 		if (CaveExplorer.useLaunchpadInput) {
-			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
+			MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 15, 0);
 			new Thread() {
 	            public void run() {
 						try {
-							Launchpad.flashImg(Launchpad.launchpad, Launchpad.exclamationMark, 3, 250, 250, 3, 0, 50, 0, 50, false);
+							MaxLaunchpad.flashImg(MaxLaunchpad.launchpad, MaxLaunchpad.exclamationMark, 3, 250, 250, 3, 0, 50, 0, 50, false);
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -40,13 +38,13 @@ public class GetNails implements Playable {
 		}
 		readSequenceAuto(SEQUENCE_1, 20, 500);
 		CaveExplorer.in.nextLine();
-		CaveExplorer.inventory.setHasNails(true);
+		CaveExplorer.inventory.setHasHammer(true);
 		if (CaveExplorer.useLaunchpadInput) {
-			Launchpad.clearPads(Launchpad.launchpad, 0, 0);
+			MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 0);
 			new Thread() {
 	            public void run() {
 	            	try {
-	            		Launchpad.flashImg(Launchpad.launchpad, Launchpad.plus6x6, 13, 67, 125, 5, 0, 0, 0, 0, false);
+	            		MaxLaunchpad.flashImg(MaxLaunchpad.launchpad, MaxLaunchpad.plus6x6, 13, 67, 125, 5, 0, 0, 0, 0, false);
 	            	} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 	            		// TODO Auto-generated catch block
 	            		e.printStackTrace();
@@ -55,7 +53,7 @@ public class GetNails implements Playable {
 	            	}
 	            }.start();               
 		}
-		CaveExplorer.printDelay("You obtained a box of nails!", 20, true);
+		CaveExplorer.printDelay("You obtained a hammer!", 20, true);
 		Thread.sleep(2000);
 	}
 	

@@ -40,13 +40,13 @@ public class CaveExplorer {
 		
 //		useLaunchpadInput = (ulpR.indexOf("y") >= 0);
 		
-		useLaunchpadInput = Launchpad.main(null); 
+		useLaunchpadInput = MaxLaunchpad.main(null); 
 		System.out.print("\n");
 		
 		
 		if (useLaunchpadInput) {
 //			Launchpad.main(null);
-			Launchpad.clearPads(caveExplorer.maxTracey.Launchpad.launchpad, 0, 0);
+			MaxLaunchpad.clearPads(caveExplorer.maxTracey.MaxLaunchpad.launchpad, 0, 0);
 		}
 		
 		
@@ -67,7 +67,7 @@ public class CaveExplorer {
 		}
 		
 		
-		caves[1][1] = new EventRoom("This is where you started.", true, new GameStart());
+		caves[1][1] = new EventRoom("This is where you started.", true, new MaxGameStart());
 		
 		caves[1][2] = new EventRoom("This is where you found the map.", true, new GetMapEvent());
 		
@@ -81,9 +81,9 @@ public class CaveExplorer {
 		ftpRoom = new EventRoom("You beat 15 game here!", true, new FifteenPuzzleEvent());
 		caves[0][2] = ftpRoom;
 		
-		caves[0][1] = new EventRoom("You found the wood here.", true, new GetWood());
-		caves[3][3] = new EventRoom("You found the hammer here.", true, new GetHammer());
-		caves[5][2] = new EventRoom("You found the nails here.", true, new GetNails());
+		caves[0][1] = new EventRoom("You found the wood here.", true, new MaxGetWood());
+		caves[3][3] = new EventRoom("You found the hammer here.", true, new MaxGetHammer());
+		caves[5][2] = new EventRoom("You found the nails here.", true, new MaxGetNails());
 		
 		caves[1][1].setConnection(CaveRoomPd8.WEST, caves[1][0], new Door());
 		caves[1][1].setConnection(CaveRoomPd8.SOUTH, caves[2][1], new Door());
@@ -136,7 +136,7 @@ public class CaveExplorer {
 					if (useLaunchpadInput) {
 //						if (!inventory.hasMap) {
 							try {
-								Launchpad.clearPads(Launchpad.launchpad, 0, 0);
+								MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 0);
 //								InventoryNockles.printAdjLP(center, currentRoom.getAdjRooms());
 //								if (inventory.hasMap) {
 //									int[] searchCoords;
@@ -206,7 +206,7 @@ public class CaveExplorer {
 
 		}
 		
-		caves[1][1] = new EventRoom("", true, new EndGame());
+		caves[1][1] = new EventRoom("", true, new MaxEndGame());
 		currentRoom = caves[1][1];
 		currentRoom.enter();
 		

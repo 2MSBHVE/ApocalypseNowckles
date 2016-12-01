@@ -4,9 +4,9 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.*;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class GameStart implements Playable {
+public class MaxGameStart implements Playable {
 
 	public static boolean eventOccurred = false; 
 	
@@ -32,7 +32,7 @@ public class GameStart implements Playable {
 			"\"Good luck!\""
 			};
 	
-	public GameStart() {
+	public MaxGameStart() {
 		
 	}
 	
@@ -50,8 +50,8 @@ public class GameStart implements Playable {
 						try {
 							for (int i = 0; i < 4; i++) {
 								
-								Launchpad.chase(Launchpad.launchpad, Launchpad.SQUARES_OUTWARD, i, "solid", 100, 0, 0, true);
-								Launchpad.clearPads(Launchpad.launchpad, 0, 0);
+								MaxLaunchpad.chase(MaxLaunchpad.launchpad, MaxLaunchpad.SQUARES_OUTWARD, i, "solid", 100, 0, 0, true);
+								MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 0);
 							}
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block

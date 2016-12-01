@@ -9,7 +9,7 @@ import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.CaveExplorer;
 import caveExplorer.Playable;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
 public class SimonRoom implements Playable {
 	static String[] keys = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
@@ -37,8 +37,8 @@ public class SimonRoom implements Playable {
 			new Thread() {
 				public void run() {
 					try {
-						Launchpad.fillPads(Launchpad.launchpad, 13, "solid", 0, 50);
-						Launchpad.clearPads(Launchpad.launchpad, 0, 50);
+						MaxLaunchpad.fillPads(MaxLaunchpad.launchpad, 13, "solid", 0, 50);
+						MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 50);
 					} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -101,7 +101,7 @@ public class SimonRoom implements Playable {
 			new Thread() {
 				public void run() {
 					
-					endAnimationLP(Launchpad.launchpad, (points >= 16));
+					endAnimationLP(MaxLaunchpad.launchpad, (points >= 16));
 					
 					Thread.yield();
 				}
@@ -579,9 +579,9 @@ public class SimonRoom implements Playable {
 							color = 21;
 						}
 						try {
-							Launchpad.fillPads(device, color, "solid", 0, 100);
+							MaxLaunchpad.fillPads(device, color, "solid", 0, 100);
 							Thread.sleep(1000);
-							Launchpad.clearPads(device, 0, 100);
+							MaxLaunchpad.clearPads(device, 0, 100);
 //							Thread.sleep(500);
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block

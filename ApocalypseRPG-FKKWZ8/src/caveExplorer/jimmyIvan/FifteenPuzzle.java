@@ -6,7 +6,7 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.CaveExplorer;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
 public class FifteenPuzzle {
 	public static Scanner in = new Scanner(System.in);
@@ -55,7 +55,7 @@ public class FifteenPuzzle {
 			printPuzzle(puzzle);
 			if (CaveExplorer.useLaunchpadInput) {
 				try {
-					Launchpad.clearPads(Launchpad.launchpad, 0, 0);
+					MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 0);
 					sendToLaunchpad(puzzle);
 				} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 					// TODO Auto-generated catch block
@@ -79,9 +79,9 @@ public class FifteenPuzzle {
 //					new Thread() {
 //						public void run() {
 							try {
-								Launchpad.displayDelay(Launchpad.launchpad, Launchpad.SQUARE4X4SOLID, 21, "solid", 25, 0);
+								MaxLaunchpad.displayDelay(MaxLaunchpad.launchpad, MaxLaunchpad.SQUARE4X4SOLID, 21, "solid", 25, 0);
 								Thread.sleep(1000);
-								Launchpad.clearPads(Launchpad.launchpad, 0, 50);
+								MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 50);
 							} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -174,8 +174,8 @@ public class FifteenPuzzle {
 				new Thread() {
 					public void run() {
 						try {
-							Launchpad.displayDelay(Launchpad.launchpad, Launchpad.SQUARE4X4SOLID, 21, "solid", 25, 0);
-							Launchpad.clearPads(Launchpad.launchpad, 0, 50);
+							MaxLaunchpad.displayDelay(MaxLaunchpad.launchpad, MaxLaunchpad.SQUARE4X4SOLID, 21, "solid", 25, 0);
+							MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 50);
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -215,7 +215,7 @@ public class FifteenPuzzle {
 	private static void sendToLaunchpad(String[][] puzzleStringArrArr) throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
 		for (int i = 0; i < puzzleStringArrArr.length; i++) {
 			for (int j = 0; j < puzzleStringArrArr[i].length; j++) {
-				Launchpad.display(Launchpad.launchpad, new int[] {i+2, j+2}, 5, "solid");
+				MaxLaunchpad.display(MaxLaunchpad.launchpad, new int[] {i+2, j+2}, 5, "solid");
 			}
 		}
 		int dispY = currenti;
@@ -237,7 +237,7 @@ public class FifteenPuzzle {
 		dispY += 2;
 		dispX += 2;
 		if (0 <= dispY && dispY <= 7 && 0 <= dispX && dispX <= 7) {
-			Launchpad.display(Launchpad.launchpad, new int[] {dispY, dispX}, 3, "solid");
+			MaxLaunchpad.display(MaxLaunchpad.launchpad, new int[] {dispY, dispX}, 3, "solid");
 		}
 		
 	}

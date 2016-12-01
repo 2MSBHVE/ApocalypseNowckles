@@ -3,7 +3,7 @@ package caveExplorer;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
 public class InventoryNockles {
 	
@@ -72,7 +72,7 @@ public class InventoryNockles {
 	}
 	
 	public static void printAdjLP(int[] center, boolean[][] dirs) throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
-		Launchpad.display(Launchpad.launchpad, center, 21, "pulse");
+		MaxLaunchpad.display(MaxLaunchpad.launchpad, center, 21, "pulse");
 		
 		int[][] modPxls = {
 				{center[0]-1, center[1]}, //NORTH
@@ -83,10 +83,10 @@ public class InventoryNockles {
 		
 		for (int i = 0; i < dirs[0].length; i++) {
 			if (dirs[0][i]) {
-				Launchpad.display(Launchpad.launchpad, modPxls[i], 3, "solid");
+				MaxLaunchpad.display(MaxLaunchpad.launchpad, modPxls[i], 3, "solid");
 			}
 			else if (dirs[1][i]) {
-				Launchpad.display(Launchpad.launchpad, modPxls[i], 5, "solid");
+				MaxLaunchpad.display(MaxLaunchpad.launchpad, modPxls[i], 5, "solid");
 			}
 		}
 	}
@@ -126,18 +126,18 @@ public class InventoryNockles {
 		
 		for (int i = 0; i < dirs[0].length; i++) {
 			if (dirs[0][i]) { //if door is open
-				if(Launchpad.make2x2Square(modPxls[i]) != null) {
+				if(MaxLaunchpad.make2x2Square(modPxls[i]) != null) {
 				
 
 
-					Launchpad.display(Launchpad.launchpad, Launchpad.make2x2Square(modPxls[i]), 2, "solid");
+					MaxLaunchpad.display(MaxLaunchpad.launchpad, MaxLaunchpad.make2x2Square(modPxls[i]), 2, "solid");
 				}
 			}
 			else if (dirs[1][i]) { //if door is locked
-				Launchpad.display(Launchpad.launchpad, Launchpad.make2x2Square(modPxls[i]), 5, "solid");
+				MaxLaunchpad.display(MaxLaunchpad.launchpad, MaxLaunchpad.make2x2Square(modPxls[i]), 5, "solid");
 			}
 		}
-		Launchpad.display(Launchpad.launchpad, Launchpad.make2x2Square(center), 21, "solid");
+		MaxLaunchpad.display(MaxLaunchpad.launchpad, MaxLaunchpad.make2x2Square(center), 21, "solid");
 	}
 
 	public String getDescription() {

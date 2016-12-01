@@ -4,9 +4,9 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.*;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class GetWood implements Playable {
+public class MaxGetWood implements Playable {
 
 	public static boolean eventOccurred = false; 
 	
@@ -15,18 +15,18 @@ public class GetWood implements Playable {
 			" - - - - press enter to pick up wood - - - - "
 			};
 	
-	public GetWood() {
+	public MaxGetWood() {
 		
 	}
 	
 	public void play() throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
 		eventOccurred = true;
 		if (CaveExplorer.useLaunchpadInput) {
-			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
+			MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 15, 0);
 			new Thread() {
 	            public void run() {
 						try {
-							Launchpad.flashImg(Launchpad.launchpad, Launchpad.exclamationMark, 3, 250, 250, 3, 0, 50, 0, 50, false);
+							MaxLaunchpad.flashImg(MaxLaunchpad.launchpad, MaxLaunchpad.exclamationMark, 3, 250, 250, 3, 0, 50, 0, 50, false);
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -39,11 +39,11 @@ public class GetWood implements Playable {
 		CaveExplorer.in.nextLine();
 		CaveExplorer.inventory.setHasWood(true);
 		if (CaveExplorer.useLaunchpadInput) {
-			Launchpad.clearPads(Launchpad.launchpad, 0, 0);
+			MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 0);
 			new Thread() {
 	            public void run() {
 	            	try {
-	            		Launchpad.flashImg(Launchpad.launchpad, Launchpad.plus6x6, 13, 67, 125, 5, 0, 0, 0, 0, false);
+	            		MaxLaunchpad.flashImg(MaxLaunchpad.launchpad, MaxLaunchpad.plus6x6, 13, 67, 125, 5, 0, 0, 0, 0, false);
 	            	} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 	            		// TODO Auto-generated catch block
 	            		e.printStackTrace();

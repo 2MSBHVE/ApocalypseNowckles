@@ -96,8 +96,8 @@ public class MaxTraceyMinesweeper implements Playable {
 			new Thread() {
 				public void run() {
 					try {
-						Launchpad.fillPads(Launchpad.launchpad, 13, "solid", 0, 50);
-						Launchpad.clearPads(Launchpad.launchpad, 0, 50);
+						MaxLaunchpad.fillPads(MaxLaunchpad.launchpad, 13, "solid", 0, 50);
+						MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 0, 50);
 					} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -149,7 +149,7 @@ public class MaxTraceyMinesweeper implements Playable {
 //			IF THE GAME IS WON
 			if (checkArraysEqual(mines, marked)) {
 				gameInProgress = false;
-				endAnimationLP(Launchpad.launchpad, true);
+				endAnimationLP(MaxLaunchpad.launchpad, true);
 				return;
 			}
 			
@@ -209,12 +209,12 @@ public class MaxTraceyMinesweeper implements Playable {
 //					}
 					gameInProgress = false;
 					if (input.indexOf(cheatCode) >= 0) {
-						endAnimationLP(Launchpad.launchpad, true);
+						endAnimationLP(MaxLaunchpad.launchpad, true);
 						return;
 					}
 					else {
 						loseGame();
-						endAnimationLP(Launchpad.launchpad, false);
+						endAnimationLP(MaxLaunchpad.launchpad, false);
 //						input = "A1";
 						break;
 					}
@@ -274,8 +274,8 @@ public class MaxTraceyMinesweeper implements Playable {
 							color = 21;
 						}
 						try {
-							Launchpad.fillPads(device, color, "solid", 0, 25);
-							Launchpad.clearPads(device, 0, 25);
+							MaxLaunchpad.fillPads(device, color, "solid", 0, 25);
+							MaxLaunchpad.clearPads(device, 0, 25);
 							Thread.sleep(500);
 						} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 							// TODO Auto-generated catch block
@@ -488,7 +488,7 @@ public class MaxTraceyMinesweeper implements Playable {
 	}
 	
 	private static void sendToLaunchpad(boolean[][] minesArr, boolean[][] markedArr, boolean[][] revealedArr) throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
-		MidiDevice launchpadOut = Launchpad.launchpad;
+		MidiDevice launchpadOut = MaxLaunchpad.launchpad;
 
 //		Count revealed mines and revealed non-mines
 		int countRevealedMines = 0;
@@ -548,9 +548,9 @@ public class MaxTraceyMinesweeper implements Playable {
 			}
 		}
 		
-		Launchpad.display(launchpadOut, revealedNonmines, 22, "solid");
-		Launchpad.display(launchpadOut, revealedMines, 6, "solid");
-		Launchpad.display(launchpadOut, markedNonrevealed, 9, "solid");
+		MaxLaunchpad.display(launchpadOut, revealedNonmines, 22, "solid");
+		MaxLaunchpad.display(launchpadOut, revealedMines, 6, "solid");
+		MaxLaunchpad.display(launchpadOut, markedNonrevealed, 9, "solid");
 
 		
 	}

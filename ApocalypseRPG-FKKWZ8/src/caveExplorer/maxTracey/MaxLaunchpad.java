@@ -17,7 +17,7 @@ import javax.sound.midi.MidiDevice.Info;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class Launchpad {
+public class MaxLaunchpad {
 	
 	public static final int WHITE = 3;
 	public static final int RED = 5;

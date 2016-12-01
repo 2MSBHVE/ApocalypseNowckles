@@ -4,9 +4,9 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
 import caveExplorer.*;
-import caveExplorer.maxTracey.Launchpad;
+import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class EndGame implements Playable {
+public class MaxEndGame implements Playable {
 
 	public static boolean eventOccurred = false; 
 	
@@ -16,7 +16,7 @@ public class EndGame implements Playable {
 			"You escape the mineshaft.",
 			};
 	
-	public EndGame() {
+	public MaxEndGame() {
 		
 	}
 	
@@ -24,11 +24,11 @@ public class EndGame implements Playable {
 		eventOccurred = true;
 		readSequenceAuto(SEQUENCE_1, 30, 1000);
 		if (CaveExplorer.useLaunchpadInput) {
-			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
+			MaxLaunchpad.clearPads(MaxLaunchpad.launchpad, 15, 0);
 //			new Thread() {
 //	            public void run() {
 	            	try {
-	            		Launchpad.chase(Launchpad.launchpad, Launchpad.SQUARES_OUTWARD, 21, "solid", 100, 0, 0, false);
+	            		MaxLaunchpad.chase(MaxLaunchpad.launchpad, MaxLaunchpad.SQUARES_OUTWARD, 21, "solid", 100, 0, 0, false);
 	            	} catch (InterruptedException | InvalidMidiDataException | MidiUnavailableException e) {
 	            		// TODO Auto-generated catch block
 	            		e.printStackTrace();
