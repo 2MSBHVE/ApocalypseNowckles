@@ -8,7 +8,7 @@ import javax.sound.midi.MidiUnavailableException;
 import caveExplorer.CaveExplorer;
 import caveExplorer.maxTracey.MaxLaunchpad;
 
-public class FifteenPuzzle {
+public class JimmyFifteenPuzzle {
 	public static Scanner in = new Scanner(System.in);
 	static String[][] puzzle;
 	static int starti;
@@ -28,7 +28,7 @@ public class FifteenPuzzle {
 			}
 		}
 	
-		Randomize.solution(puzzle);
+		IvanRandomize.solution(puzzle);
 		createNull(puzzle);
 		playGame();
 	}

@@ -6,13 +6,13 @@ import javax.sound.midi.MidiUnavailableException;
 import caveExplorer.CaveExplorer;
 import caveExplorer.Playable;
 
-public class FifteenPuzzleEvent implements Playable {
+public class JimmyIvanFifteenPuzzleEvent implements Playable {
 
 	private static final String[] SEQUENCE_1 = {"This room contains the Fifteen Puzzle!", "In order to leave this room, you must complete the puzzle.", "Would you like to play?"};
 	private static final String[] SEQUENCE_2 = {"No turning back now."};
 	
 	public static void main(String[] args) {
-		new FifteenPuzzleEvent().play();
+		new JimmyIvanFifteenPuzzleEvent().play();
 	}
 	public void play(){
 		try {
@@ -32,7 +32,7 @@ public class FifteenPuzzleEvent implements Playable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		FifteenPuzzle.startGame();
+		JimmyFifteenPuzzle.startGame();
 	}
 	
 	public static void readSequence(String[] seq){

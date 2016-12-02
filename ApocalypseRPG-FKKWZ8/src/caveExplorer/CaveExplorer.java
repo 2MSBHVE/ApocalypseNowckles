@@ -78,7 +78,7 @@ public class CaveExplorer {
 		fcRoom = new EventRoom("You beat Simons game here!", true, new SimonRoom());
 		caves[1][5] = fcRoom;
 		
-		ftpRoom = new EventRoom("You beat 15 game here!", true, new FifteenPuzzleEvent());
+		ftpRoom = new EventRoom("You beat 15 game here!", true, new JimmyIvanFifteenPuzzleEvent());
 		caves[0][2] = ftpRoom;
 		
 		caves[0][1] = new EventRoom("You found the wood here.", true, new MaxGetWood());

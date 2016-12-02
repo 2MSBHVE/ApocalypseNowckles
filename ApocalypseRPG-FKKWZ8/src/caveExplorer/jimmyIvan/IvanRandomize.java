@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Randomize {
+public class IvanRandomize {
 	private static void shuffleArray(String[][] arr) {		
 			for (int i = 0; i < arr.length; i++) {
 				for (int j = 0; j < arr[i].length; j++) {
