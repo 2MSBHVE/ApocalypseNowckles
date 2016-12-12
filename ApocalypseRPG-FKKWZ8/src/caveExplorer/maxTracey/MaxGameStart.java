@@ -42,7 +42,6 @@ public class MaxGameStart implements Playable {
 		System.out.println("- - - press enter - - -");
 		CaveExplorer.in.nextLine();
 		readSequenceAuto(SEQUENCE_2, 20, 1000);
-		Thread.sleep(1000);
 		if (CaveExplorer.useLaunchpadInput) {
 //			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
 //			new Thread() {
@@ -60,6 +59,9 @@ public class MaxGameStart implements Playable {
 //	            	Thread.yield();
 //	            	}
 //	            }.start();               
+		}
+		else {
+			Thread.sleep(1000);
 		}
 		System.out.print("\n\n\n");
 	}
