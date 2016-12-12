@@ -13,3 +13,4 @@ ___
 * Multithreading
 * Output to Novation Launchpad Pro *(Launchpad MKII supported on some systems)*
 * Is not your mama's command-line RPG
+* 見つけようとしている。
