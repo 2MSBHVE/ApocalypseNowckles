@@ -38,10 +38,10 @@ public class MaxGameStart implements Playable {
 	
 	public void play() throws InterruptedException, InvalidMidiDataException, MidiUnavailableException {
 		eventOccurred = true;
-		readSequenceAuto(SEQUENCE_1, 40, 2000);
+		readSequenceAuto(SEQUENCE_1, 10, 500);
 		System.out.println("- - - press enter - - -");
 		CaveExplorer.in.nextLine();
-		readSequenceAuto(SEQUENCE_2, 20, 1000);
+		readSequenceAuto(SEQUENCE_2, 10, 500);
 		Thread.sleep(1000);
 		if (CaveExplorer.useLaunchpadInput) {
 //			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
