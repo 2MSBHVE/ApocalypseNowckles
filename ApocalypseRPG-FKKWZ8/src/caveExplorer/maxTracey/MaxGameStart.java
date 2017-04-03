@@ -41,10 +41,10 @@ public class MaxGameStart implements Playable {
 		readSequenceAuto(SEQUENCE_1, 10, 500);
 		System.out.println("- - - press enter - - -");
 		CaveExplorer.in.nextLine();
-		readSequenceAuto(SEQUENCE_1, 40, 2000);
-		System.out.println("- - - press enter - - -");
-		CaveExplorer.in.nextLine();
-		readSequenceAuto(SEQUENCE_2, 20, 1000);
+//		readSequenceAuto(SEQUENCE_1, 10, 500);
+//		System.out.println("- - - press enter - - -");
+//		CaveExplorer.in.nextLine();
+		readSequenceAuto(SEQUENCE_2, 10, 500);
 		if (CaveExplorer.useLaunchpadInput) {
 //			Launchpad.clearPads(Launchpad.launchpad, 15, 0);
 //			new Thread() {

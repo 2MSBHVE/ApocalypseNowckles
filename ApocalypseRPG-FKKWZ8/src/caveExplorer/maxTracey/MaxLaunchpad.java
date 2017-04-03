@@ -247,7 +247,8 @@ public class MaxLaunchpad {
 			};
 	
 	static MidiDevice.Info[] infosA = MidiSystem.getMidiDeviceInfo();
-	static String displaysAs = "LivePort";
+//	static String displaysAs = "LivePort";
+	static String displaysAs = "LaunchpadMK23";
 	
 	public static boolean main(String[] args) throws MidiUnavailableException, InterruptedException, InvalidMidiDataException {
 		int launchpadDeviceNumber = -1;
@@ -256,7 +257,7 @@ public class MaxLaunchpad {
 		for (int i = 0; i < infosA.length; i++) {
 			Info inf = infosA[i];
 			String name = inf.getName().replace(" ", "");
-//			System.out.println("\"" + name + "\"");
+			System.out.println("\"" + name + "\"");
 			if (name.equals(displaysAs)) {
 				launchpadDeviceNumber = i;
 			}
